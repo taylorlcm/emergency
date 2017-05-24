@@ -1,0 +1,640 @@
+<style>
+h1,h2,h4{
+  font-family:'Open Sans', sans-serif;
+}
+.mo-button{
+  height: 80px;
+  padding: .8em 0em;
+  cursor: pointer;
+}
+.mo-body{
+  height: 80px;
+  padding: .5em 0em;
+  border-bottom: 1px solid #eee;
+}
+.mainbody > .mo-body:last-child{
+  border-bottom: none;
+}
+.phone{
+  width: 35px!important;
+  margin: 1.5em 0em;
+}
+.icon{
+  margin: .2em 0em;
+}
+.mobile img{
+  width: 60px;
+}
+.mo-button h2{
+  font-family:'Open Sans', sans-serif;
+  font-size:20px!important;
+}
+.redarea h2{
+  font-family:'Open Sans', sans-serif;
+  color:black;
+  font-size:15px;
+}
+.yellowarea h2{
+  font-family:'Open Sans', sans-serif;
+  color: #747575;
+  font-size:15px;
+}
+.red{
+  background-color: #ED1C24;
+}
+.yellow{
+  background-color: #FFCD05;
+}
+.black{
+  background-color: black;
+}
+.grey{
+  background-color: #525452;
+}
+.lightblue{
+  background-color: #D9EFF7;
+}
+.blue{
+  background-color: #026CB6;
+}
+@media screen and (min-width: 768px) {
+  .frow h2{
+    color:black;
+    text-align: center;
+    font-size: 19px;
+  }
+  .frow img{
+    width: 20%;
+  }
+  .frow h4{
+    color:#747575;
+    font-size: 12px;
+    border: 1px solid #747575;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1em 0em;
+  }
+  .bystyle{
+    background-color:#FFCD05;
+    color:black!important;
+    border: 1px solid black!important;
+  }
+  .small{
+    font-size:10px!important;
+    }
+}
+@media screen and (min-width: 992px) {
+  .frow h2{
+    color:black;
+    text-align: center;
+    font-size: 22px;
+  }
+  .frow img{
+    width: 25%;
+  }
+  .frow h4{
+    color:#747575;
+    font-size: 15px;
+}
+  .small{
+    font-size:13px!important;
+    }
+  }
+
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".black").hide();
+  $(".blue").hide();
+  $(".mainbody").hide();
+  $(".bystyle").hide();
+  $(".red").click(function(){
+    var r = $(".red").index(this);
+    $(".r:eq("+ r +")").fadeToggle(100);
+    $(".g:eq("+ r +"), .g:gt("+ r +"), .g:lt("+ r +")").fadeOut(100);
+    $(".y:eq("+ r +"), .y:gt("+ r +"), .y:lt("+ r +")").fadeOut(100);
+    $(".b:eq("+ r +"), .b:gt("+ r +"), .b:lt("+ r +")").fadeOut(100);
+    $(".yellow:eq("+ r +"), .yellow:gt("+ r +"), .yellow:lt("+ r +")").fadeIn(100);
+    $(".black:eq("+ r +"), .black:gt("+ r +"), .black:lt("+ r +")").fadeOut(100);
+    $(".lightblue:eq("+ r +"), .lightblue:gt("+ r +"), .lightblue:lt("+ r +")").fadeIn(100);
+    $(".blue:eq("+ r +"), .blue:gt("+ r +"), .blue:lt("+ r +")").fadeOut(100);
+  });
+    $(".yellow").click(function(){
+      var y = $(".yellow").index(this);
+      //$(".testing").text( "That was div index #" + y );
+      $(".yellow:eq("+ y +")").hide();
+      $(".black:eq("+ y +")").fadeIn(100);
+      $(".y:eq("+ y +")").fadeIn(100);
+      $(".g:eq("+ y +"), .g:gt("+ y +"), .g:lt("+ y +")").fadeOut(100);
+      $(".r:eq("+ y +"), .r:gt("+ y +"), .r:lt("+ y +")").fadeOut(100);
+      $(".b:eq("+ y +"), .b:gt("+ y +"), .b:lt("+ y +")").fadeOut(100);
+      $(".y:gt("+ y +"), .y:lt("+ y +")").fadeOut(100);
+      $(".yellow:gt("+ y +"), .yellow:lt("+ y +")").fadeIn(100);
+      $(".black:gt("+ y +"), .black:lt("+ y +")").fadeOut(100);
+      $(".lightblue:eq("+ y +"), .lightblue:gt("+ y +"), .lightblue:lt("+ y +")").fadeIn(100);
+      $(".blue:eq("+ y +"), .blue:gt("+ r +"), .blue:lt("+ y +")").fadeOut(100);
+    });
+    $(".black").click(function(){
+      var b = $(".black").index(this);
+      $(".black:eq("+ b +")").hide(.1);
+      $(".yellow:eq("+ b +")").fadeIn(100);
+      $(".y:eq("+ b +")").fadeOut(100);
+    });
+    $(".grey").click(function(){
+      var g = $(".grey").index(this);
+      $(".g:eq("+ g +")").fadeToggle(100);
+      $(".y:eq("+ g +"), .y:gt("+ g +"), .y:lt("+ g +")").fadeOut(100);
+      $(".r:eq("+ g +"), .r:gt("+ g +"), .r:lt("+ g +")").fadeOut(100);
+      $(".b:eq("+ g +"), .b:gt("+ g +"), .b:lt("+ g +")").fadeOut(100);
+      $(".yellow:eq("+ g +"), .yellow:gt("+ g +"), .yellow:lt("+ g +")").fadeIn(100);
+      $(".black:eq("+ g +"), .black:gt("+ g +"), .black:lt("+ g +")").fadeOut(100);
+      $(".lightblue:eq("+ g +"), .lightblue:gt("+ g +"), .lightblue:lt("+ g +")").fadeIn(100);
+      $(".blue:eq("+ g +"), .blue:gt("+ g +"), .blue:lt("+ g +")").fadeOut(100);
+    });
+    $(".lightblue").click(function(){
+      var l = $(".lightblue").index(this);
+      $(".lightblue:eq("+ l +")").hide();
+      $(".blue:eq("+ l +")").fadeIn(100);
+      $(".b:eq("+ l +")").fadeIn(100);
+      $(".y:eq("+ l +"), .y:gt("+ l +"), .y:lt("+ l +")").fadeOut(100);
+      $(".r:eq("+ l +"), .r:gt("+ l +"), .r:lt("+ l +")").fadeOut(100);
+      $(".g:eq("+ l +"), .g:gt("+ l +"), .g:lt("+ l +")").fadeOut(100);
+      $(".yellow:eq("+ l +"), .yellow:gt("+ l +"), .yellow:lt("+ l +")").fadeIn(100);
+      $(".black:eq("+ l +"), .black:gt("+ l +"), .black:lt("+ l +")").fadeOut(100);
+    });
+    $(".blue").click(function(){
+      var bl = $(".blue").index(this);
+      $(".blue:eq("+ bl +")").hide();
+      $(".lightblue:eq("+ bl +")").fadeIn(100);
+      $(".b:eq("+ bl +")").fadeOut(100);
+    });
+    $(".button").mouseenter(function(){
+      var bu = $(".button").index(this);
+      $(".button:eq("+ bu +")").hide();
+      $(".bystyle:eq("+ bu +")").show();
+      });
+      $(".bystyle").mouseleave(function(){
+        var by = $(".bystyle").index(this);
+        $(".bystyle:eq("+ by +")").hide();
+        $(".button:eq("+ by +")").show();
+        });
+  });
+</script>
+
+<div class="mobile hidden-sm hidden-md hidden-lg col-xs-12">
+<p>A guide on how the BYU-Idaho community can prepare for and respond to campus emergencies.</p>
+
+<!-- ***********************************************************Emergency Contact-************************************************************************ -->
+<div class="redarea"> 
+<div class="mo-button red">
+<div class="col-all-3">
+  <img alt="Emergency Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/WarningIcon.png"/>
+</div>
+
+<div class="col-all-9">
+  <h2 style="color:white;">Emergency Contact</h2>
+</div>
+</div>
+
+<div class="r mainbody">
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Campus Security Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/EC-CampusSecurityG.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Campus Security<br>208-496-3000</h2>
+  </div>  
+  <div class="col-all-2">
+    <img class="phone" alt="phone Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/phone1.png"/>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Rexburg Police Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/EC-RexburgPoliceG.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Rexburg Police<br>208-359-3000</h2>
+  </div>
+  <div class="col-all-2">
+    <img class="phone" alt="phone Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/phone1.png"/>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Rexburg Fire Dept Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/EC-FireDeparmetnG.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Rexburg Fire Dept<br>208-359-3010</h2>
+  </div>
+  <div class="col-all-2">
+    <img class="phone" alt="phone Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/phone1.png"/>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Student Health Center Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/EC-HealthCenterG.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Student Health Center<br>208-496-9330</h2>
+  </div>
+  <div class="col-all-2">
+    <img class="phone" alt="phone Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/phone1.png"/>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Student Health Center Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/EC-MadisonHospitalG.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Madison Memorial Hosp<br>208-359-6900</h2>
+  </div>
+  <div class="col-all-2">
+    <img class="phone" alt="phone Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/phone1.png"/>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- *****************************************************************Safety & Security************************************************************************ -->
+
+<div class="yellowarea"> 
+<div class="mo-button yellow">
+<div class="col-all-3">
+  <img alt="Safety &amp; Security Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyAndSecurity.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:black;">Safety &amp; Security</h2>
+</div>
+</div>
+
+<div class="mo-button black">
+<div class="col-all-3">
+  <img alt="Safety &amp; Security Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyAndSecurityYB.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:#FFCD05;">Safety &amp; Security</h2>
+</div>
+</div>
+
+<div class="y mainbody">
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Active Shooter Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-01.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Active Shooter</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Bomb Threat Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-03.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Bomb Threat</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Sexual Assault Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-12.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Sexual Assault</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Vehicular Accidents Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-04.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Vehicular Accidents</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Physical Assault Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-02.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Physical Assault</h2>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- *****************************************************************Natural Disasters************************************************************************ -->
+
+
+<div class="yellowarea"> 
+<div class="mo-button yellow">
+<div class="col-all-3">
+  <img alt="Natural Disasters Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/NaturalDisaster.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:black;">Natural Disasters</h2>
+</div>
+</div>
+
+<div class="mo-button black">
+<div class="col-all-3">
+  <img alt="Natural Disasters Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/NaturalDisasterYB.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:#FFCD05;">Natural Disasters</h2>
+</div>
+</div>
+
+<div class="y mainbody">
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Power Outage Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-13.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Power Outage</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Fire Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-08.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Fire</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Flood Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-09.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Flood</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Storms Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-19.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Storms</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Earthquake Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-10.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Earthquake</h2>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ***********************************************************************Health Risks************************************************************************ -->
+<div class="yellowarea"> 
+<div class="mo-button yellow">
+<div class="col-all-3">
+  <img alt="Health Risks Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/HealthRisk.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:black;">Health Risks</h2>
+</div>
+</div>
+
+<div class="mo-button black">
+<div class="col-all-3">
+  <img alt="Health Risks Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/HealthRiskYB.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:#FFCD05;">Health Risks</h2>
+</div>
+</div>
+
+<div class="y mainbody">
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Disease/Sickness Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-25.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Disease/Sickness</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Mental/Behavioral Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-07.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Mental/Behavioral</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Hazardous Substance Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-06.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Hazardous Substance</h2>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ***********************************************************************Emergency Color Code***************************************************************** -->
+<div class="redarea"> 
+<div class="mo-button grey">
+<div class="col-all-3">
+</div>
+<div class="col-all-9">
+  <h2 style="color:white;">Emergency Color Code</h2>
+</div>
+</div>
+
+<div class="g mainbody">
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Red Color Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Red.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Imminent Threat</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Orange Color Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Orange.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Warning</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Yellow Color Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Yellow.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Caution</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="Green Color Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Green.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>All Clear</h2>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<!-- ***********************************************************************Related Links************************************************************************ -->
+
+<div class="yellowarea"> 
+<div class="mo-button lightblue">
+<div class="col-all-3">
+  <img alt="Related Links Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIconsYB-16v1-02.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:#026CB6;">Related Links</h2>
+</div>
+</div>
+
+<div class="mo-button blue">
+<div class="col-all-3">
+  <img alt="Related Links Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/WhiteLink-16v1.png"/>
+</div>
+<div class="col-all-9">
+  <h2 style="color:white;">Related Links</h2>
+</div>
+</div>
+<div class="b mainbody">
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="GrayLink Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/GrayLink.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>News Feed</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="GrayLink Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/GrayLink.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Student Health Center</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="GrayLink Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/GrayLink.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Madison Memorial Hosp</h2>
+  </div>
+</div>
+
+<div class="mo-body">
+  <div class="col-all-3">
+    <img class="icon" alt="GrayLink Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/GrayLink.png"/>
+  </div>
+  <div class="col-all-7">
+    <h2>Campus Safety &amp; Security</h2>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ***********************************************************************How Will I Be Notified************************************************************** -->
+<div style="background-color: #D9EFF7;" class="mo-button">
+<div class="col-all-3">
+</div>
+<div class="col-all-9">
+  <h2 style="color:#026CB6;">How Will I Be Notified?</h2>
+</div>
+</div>
+</div>
+<!-- ***********************************************************************Tablets & Desktops************************************************************** -->
+
+<div class="hidden-xs col-sm-3">
+<img alt="Safety and Security Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIconsBY-16v1-.png">
+<div class="frow">  
+<h2>Safety &amp; Security</h2>
+<h4 class="button"><img alt="Active Shooter Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-01.png">Active Shooter</h4>
+<h4 class="bystyle"><img alt="Active Shooter Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/ActiveShooter.png">Active Shooter</h4>
+
+<h4 class="button"><img alt="Bomb Threats Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-03.png">Bomb Threats</h4>
+<h4 class="bystyle"><img alt="Bomb Threats Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Threats.png">Bomb Threats</h4>
+
+<h4 class="button"><img alt="Sexual Misconduct Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-12.png">Sexual Misconduct</h4>
+<h4 class="bystyle"><img alt="Sexual Misconduct Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SexualAssault.png">Sexual Misconduct</h4>
+
+<h4 class="button"><img alt="Vehicular Accidents Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-04.png">Vehicular Accidents</h4>
+<h4 class="bystyle"><img alt="Vehicular Accidents Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/VehicularAccident.png">Vehicular Accidents</h4>
+
+<h4 class="button"><img alt="Physical Assault Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-02.png">Physical Assault</h4>
+<h4 class="bystyle"><img alt="Physical Assault Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/PhysicalAssault.png">Physical Assault</h4>
+
+</div>
+</div>
+
+<div class="hidden-xs col-sm-3">
+<img alt="Natural Disasters Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIconsBY-16v1.png">
+<div class="frow">  
+<h2>Natural Disasters</h2>
+<h4 class="button"><img alt="Power Outage Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-13.png">Power Outage</h4>
+<h4 class="bystyle"><img alt="Power Outage Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/PowerOutage.png">Power Outage</h4>
+
+<h4 class="button"><img alt="Fire Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-08.png">Fire</h4>
+<h4 class="bystyle"><img alt="Fire Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Fire.png">Fire</h4>
+
+<h4 class="button"><img alt="Flood Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-09.png">Flood</h4>
+<h4 class="bystyle"><img alt="Flood Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Flood.png">Flood</h4>
+
+<h4 class="button"><img alt="Storms Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-11.png">Storms</h4>
+<h4 class="bystyle"><img alt="Storms Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Thunderstorm.png">Storms</h4>
+
+<h4 class="button"><img alt="Earthquake Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-10.png">Earthquake</h4>
+<h4 class="bystyle"><img alt="Earthquake Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/Earthquake.png">Earthquake</h4>
+
+</div>
+</div>
+
+<div class="hidden-xs col-sm-3">
+<img alt="Health Risks Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIconsBY-16v1-1.png">
+<div class="frow">  
+<h2>Health Risks</h2>
+<h4 class="button"><img alt="Disease/Sickness Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-25.png">Disease/Sickness</h4>
+<h4 class="bystyle"><img alt="Disease/Sickness Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/EC-MadisonHospital.png">Disease/Sickness</h4>
+<h4 class="button small"><img alt="Mental/Behavioral Health Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-07.png">Mental/Behavioral Health</h4>
+<h4 class="bystyle small"><img alt="Mental/Behavioral Health Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/MentalBehavioralHealth.png">Mental/Behavioral Health</h4>
+<h4 class="button small"><img alt="Hazardous Substances Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/SafetyIcons-16v10-06.png">Hazardous Substances</h4>
+<h4 class="bystyle small"><img alt="Hazardous Substances Icon" src="http://emergency.byui.edu/wp-content/uploads/2016/09/HazaedousSubstances.png">Hazardous Substances</h4>
+
+
+
+</div>
+</div>
+
+<div class="desktop hidden-xs col-sm-3">
+
+</div>
+
+
+
+
+
